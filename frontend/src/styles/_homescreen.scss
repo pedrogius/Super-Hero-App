@@ -1,0 +1,91 @@
+@mixin heroArea($background, $gridArea) {
+	display: flex;
+	justify-content: center;
+	grid-area: $gridArea;
+	background-color: $background;
+	border-radius: 5px;
+	box-shadow: $box-shadow;
+	padding: 25px;
+	h5 {
+		color: #333;
+	}
+}
+
+.homescreen-container {
+	display: grid;
+	grid-template-columns: 1.2fr 1fr 1fr 1fr;
+	grid-template-rows: 0.1fr 0.1fr 0.4fr 0.6fr 0.1fr 1fr;
+	gap: 10px 25px;
+	grid-template-areas:
+		'powerstats-title main-title main-title main-title'
+		'main-chart good-heroes-title good-heroes-title good-heroes-title'
+		'main-chart good-heroes-cards good-heroes-cards good-heroes-cards'
+		'powerstats good-heroes-cards good-heroes-cards good-heroes-cards'
+		'powerstats bad-heroes-title bad-heroes-title bad-heroes-title'
+		'powerstats bad-heroes-cards bad-heroes-cards bad-heroes-cards';
+	h2 {
+		text-align: center;
+	}
+}
+
+.powerstats-title {
+	grid-area: powerstats-title;
+}
+
+.powerstats {
+	grid-area: powerstats;
+}
+
+.main-title {
+	grid-area: main-title;
+	text-align: center;
+}
+
+.good-heroes-title {
+	grid-area: good-heroes-title;
+}
+
+.main-chart {
+	grid-area: main-chart;
+}
+
+.good-heroes-cards {
+	@include heroArea(#ccd5ae, good-heroes-cards);
+}
+
+.bad-heroes-cards {
+	@include heroArea(#e07a5f, bad-heroes-cards);
+}
+
+.bad-heroes-title {
+	grid-area: bad-heroes-title;
+}
+
+.jumbotron {
+	padding: 4rem 2rem;
+	margin-bottom: 2rem;
+	background-color: #0f2537;
+	border-radius: 0.3rem;
+	box-shadow: $box-shadow;
+}
+
+@media (max-width: 500px) {
+	.homescreen-container {
+		display: flex;
+		flex-direction: column;
+	}
+	.main-title {
+		display: none;
+	}
+	.good-heroes-cards {
+		display: flex;
+		flex-direction: column;
+	}
+	.bad-heroes-cards {
+		display: flex;
+		flex-direction: column;
+	}
+	.powerstats {
+		display: none;
+	}
+}

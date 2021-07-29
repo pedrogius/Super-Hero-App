@@ -1,0 +1,34 @@
+select {
+	border-radius: 5px 0 0 5px !important;
+}
+
+input {
+	border-radius: 0 5px 5px 0 !important;
+}
+
+.search-bar select {
+	display: inline-block;
+	width: 30%;
+	padding: 7px 12px;
+}
+
+.search-bar input {
+	display: inline-block;
+	width: 70%;
+	padding: 6px 12px;
+	border: 1px solid rgb(118, 118, 118);
+}
+
+@media (max-width: 500px) {
+	.search-bar select {
+		width: 40%;
+	}
+
+	.search-bar input {
+		width: 60%;
+	}
+
+	.search-bar option {
+		font-size: 0.6rem;
+	}
+}
