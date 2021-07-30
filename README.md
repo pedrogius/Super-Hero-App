@@ -26,3 +26,4 @@ It wasn't a requirement but a backend was built to handle the external API reque
 ## Known Issues
  * Was not able to complete tests for components. Could not find a way to test formik onSubmit.
  * ReactFlipCard was complicated to set dynamic height on the card, so I used fixed heights. Caused some issues on responsiveness where it would sometimes overflow on the x axis.
+ * Initially included .env file on first commit.
